@@ -2,7 +2,7 @@ public class ArrayList implements List {
 	protected Object[] data;
 
 	public ArrayList() {
-		data = new Object[100];
+		data = new Object[3];
 	}
 
 	public boolean isEmpty() {
@@ -32,10 +32,10 @@ public class ArrayList implements List {
 	}
 
 	public ReturnObject remove(int index) {
-		Object removed = data[index];
 		if ((index < 0) || (index > size())) {
 			return new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
 		}
+		Object removed = data[index];
 		for (int i = index; i < size(); i++) {
 			if (data[i] != null) {
 				data[i] = data[i + 1];
@@ -51,6 +51,13 @@ public class ArrayList implements List {
 		if ((index < 0) || (index > size())) {
 			return new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
 		} 
+		if (size() == data.length) {
+			Object[] dataBigger = new Object[(size() * 2)];
+			for (int i = 0; i < size(); i++) {
+				dataBigger[i] = data[i];
+			}
+			data = dataBigger;
+		}
 		for (int i = size(); i > index; i--) {
 			data[i] = data[i-1]; //dist from end
 		}
@@ -59,6 +66,13 @@ public class ArrayList implements List {
 	}
 
 	public ReturnObject add(Object item) {
+		if (size() == data.length) {
+			Object[] dataBigger = new Object[(size() * 2)];
+			for (int i = 0; i < size(); i++) {
+				dataBigger[i] = data[i];
+			}
+			data = dataBigger;
+		}
 		if (item == null) {
 			return new ReturnObjectImpl(null, ErrorMessage.INVALID_ARGUMENT);
 		} else {
