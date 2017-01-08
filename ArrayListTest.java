@@ -27,5 +27,35 @@ public class ArrayListTest {
 		System.out.println(farrayList1.head().getReturnValue());
 		System.out.println(farrayList1.rest().head().getReturnValue());
 		System.out.println(farrayList1.rest().rest().head().getReturnValue());
+		farrayList1.add(2);
+		System.out.println (farrayList1.size());
+		farrayList1.add(9);
+		System.out.println (farrayList1.size());
+		farrayList1.add(2);
+		System.out.println (farrayList1.size());
+		farrayList1.add(9);
+		System.out.println (farrayList1.size());
+		farrayList1.add(2);
+		System.out.println (farrayList1.size());
+		farrayList1.add(9);
+		System.out.println (farrayList1.size());
+		farrayList1.add(2);
+		System.out.println (farrayList1.size());
+		farrayList1.add(9);
+		System.out.println (farrayList1.size());
+		
+		farrayList1.add(0,2);
+		System.out.println (farrayList1.size());
+		farrayList1.add(0,9);
+		System.out.println (farrayList1.size());
+		farrayList1.add(0,2);
+		System.out.println (farrayList1.size());
+		farrayList1.add(0,9);
+		System.out.println (farrayList1.size());
+		farrayList1.add(0,2);
+		System.out.println (farrayList1.size());
+		farrayList1.add(0,9);
+
+
 	}
 }
